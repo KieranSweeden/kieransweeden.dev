@@ -1,10 +1,25 @@
 ---
 import NavLink from "./NavLink.astro";
+
+const navLinkList = [
+  { label: "About", path: "/about" },
+  { label: "Blog", path: "/blog" },
+];
 ---
 
 <nav class="lg:mx-12">
   <div class="mt-4 space-y-4 lg:mt-8">
-    <NavLink label="About" path="/about" />
-    <NavLink label="Blog" path="/blog" />
+    {navLinkList.map((link) => <NavLink label={link.label} path={link.path} />)}
   </div>
 </nav>
+
+<script>
+  const activeNavLink = document.querySelector(
+    `a[href="${window.location.pathname}"]`
+  );
+
+  if (activeNavLink) {
+    activeNavLink.classList.remove("text-zinc-500");
+    activeNavLink.classList.add("text-zinc-200");
+  }
+</script>
