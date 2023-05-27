@@ -5,10 +5,15 @@ export interface Props {
 }
 
 const { label, path } = Astro.props;
+
+const isActive = Astro.url.pathname === path;
+
+const colourRendered = isActive
+  ? "text-zinc-500 dark:text-zinc-200"
+  : "text-zinc-500 dark:text-zinc-500";
 ---
 
 <a
   href={path}
-  class=`block text-zinc-500 dark:text-zinc-500 hover:text-zinc-100 hover:underline`
-  >{label}</a
+  class=`block ${colourRendered} hover:text-zinc-50 hover:underline`>{label}</a
 >
