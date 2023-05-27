@@ -13,13 +13,4 @@ const navLinkList = [
   </div>
 </nav>
 
-<script>
-  const activeNavLink = document.querySelector(
-    `a[href="${window.location.pathname}"]`
-  );
-
-  if (activeNavLink) {
-    activeNavLink.classList.remove("text-zinc-500");
-    activeNavLink.classList.add("text-zinc-200");
-  }
-</script>
+<script src="../scripts/navigation/highlightActiveNavLink.ts"></script>
