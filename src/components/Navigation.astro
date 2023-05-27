@@ -1,17 +1,15 @@
 ---
+import NavLink from "./NavLink.astro";
+export interface Props {
+  currentPage: string;
+}
+
+const { currentPage } = Astro.props;
 ---
 
 <nav class="lg:mx-12">
   <div class="mt-4 space-y-4 lg:mt-8">
-    <a
-      href="/about"
-      class="block text-zinc-500 dark:text-zinc-500 hover:text-zinc-100 hover:underline"
-      >About</a
-    >
-    <a
-      href="/blog"
-      class="block text-zinc-500 dark:text-zinc-500 hover:text-zinc-100 hover:underline"
-      >Blog</a
-    >
+    <NavLink label="About" path="/about" />
+    <NavLink label="Blog" path="/blog" />
   </div>
 </nav>
