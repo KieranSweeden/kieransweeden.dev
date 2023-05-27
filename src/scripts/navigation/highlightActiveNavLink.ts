@@ -1,10 +1,12 @@
-const activeNavLinkElement = document.querySelector(
-  `a[href="${window.location.pathname}"]`
+const activeNavLinkElements: HTMLAnchorElement[] = Array.from(
+  document.querySelectorAll(`a[href="${window.location.pathname}"]`)
 );
 
-if (activeNavLinkElement) {
-  activeNavLinkElement.classList.remove("text-zinc-500");
-  activeNavLinkElement.classList.add("text-zinc-200");
+if (activeNavLinkElements && activeNavLinkElements.length) {
+  for (const link of activeNavLinkElements) {
+    link.classList.remove("text-zinc-500");
+    link.classList.add("text-zinc-200");
+  }
 } else {
   console.error("Could not find active nav link element");
 }

@@ -1,9 +1,17 @@
 ---
+import type { NavLinkItem } from "../types/navigation";
+import NavLink from "./NavLink.astro";
+
+export interface Props {
+  navLinks: NavLinkItem[];
+}
+
+const { navLinks } = Astro.props;
 ---
 
-<footer>
-  <div class="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
-    <p class="mx-auto my-6 max-w-md text-center leading-relaxed text-zinc-300">
+<footer class="flex justify-between py-6 px-8 outline">
+  <section>
+    <p class="leading-relaxed text-zinc-300">
       Made with love&nbsp;
       <svg
         width="16px"
@@ -20,108 +28,97 @@
       >
       &nbsp;using Astro.
     </p>
-
-    <nav>
-      <ul class="flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
-        <li>
-          <a class="text-gray-700 transition hover:text-gray-700/75" href="/">
-            About
-          </a>
-        </li>
-
-        <li>
-          <a class="text-gray-700 transition hover:text-gray-700/75" href="/">
-            Blog
-          </a>
-        </li>
-      </ul>
-
-      <ul class="mt-12 flex justify-center gap-6 md:gap-8">
-        <li>
-          <a
-            href="/"
-            rel="noreferrer"
-            target="_blank"
-            class="text-zinc-200 transition hover:text-gray-700/75"
-          >
-            <span class="sr-only">Twitter</span>
-            <!--?xml version="1.0" encoding="UTF-8"?-->
-            <svg
-              width="24px"
-              height="24px"
+    <ul class="flex gap-6">
+      <li>
+        <a
+          href="/"
+          rel="noreferrer"
+          target="_blank"
+          class="text-zinc-200 transition hover:text-gray-700/75"
+        >
+          <span class="sr-only">Twitter</span>
+          <!--?xml version="1.0" encoding="UTF-8"?-->
+          <svg
+            width="20px"
+            height="20px"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="stroke-zinc-200"
+            ><path
+              d="M23 3.01s-2.018 1.192-3.14 1.53a4.48 4.48 0 00-7.86 3v1a10.66 10.66 0 01-9-4.53s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5 0-.278-.028-.556-.08-.83C21.94 5.674 23 3.01 23 3.01z"
               stroke-width="1.5"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="stroke-zinc-200"
-              ><path
-                d="M23 3.01s-2.018 1.192-3.14 1.53a4.48 4.48 0 00-7.86 3v1a10.66 10.66 0 01-9-4.53s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5 0-.278-.028-.556-.08-.83C21.94 5.674 23 3.01 23 3.01z"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path></svg
-            >
-          </a>
-        </li>
-
-        <li>
-          <a
-            href="/"
-            rel="noreferrer"
-            target="_blank"
-            class="text-gray-700 transition hover:text-gray-700/75"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path></svg
           >
-            <span class="sr-only">GitHub</span>
-            <!--?xml version="1.0" encoding="UTF-8"?-->
-            <svg
-              width="24px"
-              height="24px"
-              stroke-width="1.5"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="stroke-zinc-200"
-              ><path
-                d="M16 22.027v-2.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7a5.44 5.44 0 00-1.5-3.75 5.07 5.07 0 00-.09-3.77s-1.18-.35-3.91 1.48a13.38 13.38 0 00-7 0c-2.73-1.83-3.91-1.48-3.91-1.48A5.07 5.07 0 005 5.797a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 00-.94 2.58v2.87M9 20.027c-3 .973-5.5 0-7-3"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path></svg
-            >
-          </a>
-        </li>
+        </a>
+      </li>
 
-        <li>
-          <a
-            href="/"
-            rel="noreferrer"
-            target="_blank"
-            class="text-gray-700 transition hover:text-gray-700/75"
-          >
-            <span class="sr-only">LinkedIn</span>
-            <!--?xml version="1.0" encoding="UTF-8"?-->
-            <!--?xml version="1.0" encoding="UTF-8"?-->
-            <svg
-              width="24px"
-              height="24px"
+      <li>
+        <a
+          href="/"
+          rel="noreferrer"
+          target="_blank"
+          class="text-gray-700 transition hover:text-gray-700/75"
+        >
+          <span class="sr-only">GitHub</span>
+          <!--?xml version="1.0" encoding="UTF-8"?-->
+          <svg
+            width="20px"
+            height="20px"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="stroke-zinc-200"
+            ><path
+              d="M16 22.027v-2.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7a5.44 5.44 0 00-1.5-3.75 5.07 5.07 0 00-.09-3.77s-1.18-.35-3.91 1.48a13.38 13.38 0 00-7 0c-2.73-1.83-3.91-1.48-3.91-1.48A5.07 5.07 0 005 5.797a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 00-.94 2.58v2.87M9 20.027c-3 .973-5.5 0-7-3"
               stroke-width="1.5"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path></svg
+          >
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="/"
+          rel="noreferrer"
+          target="_blank"
+          class="text-gray-700 transition hover:text-gray-700/75"
+        >
+          <span class="sr-only">LinkedIn</span>
+          <!--?xml version="1.0" encoding="UTF-8"?-->
+          <!--?xml version="1.0" encoding="UTF-8"?-->
+          <svg
+            width="20px"
+            height="20px"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="stroke-zinc-200"
+            ><path
+              d="M21 8v8a5 5 0 01-5 5H8a5 5 0 01-5-5V8a5 5 0 015-5h8a5 5 0 015 5zM7 17v-7"
               class="stroke-zinc-200"
-              ><path
-                d="M21 8v8a5 5 0 01-5 5H8a5 5 0 01-5-5V8a5 5 0 015-5h8a5 5 0 015 5zM7 17v-7"
-                class="stroke-zinc-200"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path><path
-                d="M11 17v-3.25M11 10v3.75m0 0c0-3.75 6-3.75 6 0V17M7 7.01l.01-.011"
-                class="stroke-zinc-200"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path></svg
-            >
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path><path
+              d="M11 17v-3.25M11 10v3.75m0 0c0-3.75 6-3.75 6 0V17M7 7.01l.01-.011"
+              class="stroke-zinc-200"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path></svg
+          >
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <nav>
+    <ul class="flex flex-col items-end">
+      {navLinks.map((link) => <NavLink label={link.label} path={link.path} />)}
+    </ul>
+  </nav>
 </footer>
