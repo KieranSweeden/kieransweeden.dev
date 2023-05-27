@@ -7,8 +7,10 @@ export interface Props {
 const { label, path } = Astro.props;
 ---
 
-<a
-  href={path}
-  class=`block nav-link text-zinc-500 hover:text-zinc-50 hover:underline`
-  >{label}</a
->
+<li>
+  <a
+    href={path}
+    class=`block nav-link text-zinc-500 hover:text-zinc-50 hover:underline`
+    >{label}</a
+  >
+</li>

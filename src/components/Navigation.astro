@@ -7,10 +7,14 @@ const navLinkList = [
 ];
 ---
 
-<nav class="lg:mx-12">
-  <div class="mt-4 space-y-4 lg:mt-8">
+<nav class="flex w-full justify-between items-center py-6 px-8">
+  <a href="/">
+    <h1 class="text-2xl text-zinc-200">Kieran Sweeden</h1>
+    <small class="text-sm text-zinc-500">Full Stack Developer</small>
+  </a>
+  <ul class="flex space-x-6">
     {navLinkList.map((link) => <NavLink label={link.label} path={link.path} />)}
-  </div>
+  </ul>
 </nav>
 
 <script src="../scripts/navigation/highlightActiveNavLink.ts"></script>

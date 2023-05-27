@@ -22,18 +22,9 @@ const { title } = Astro.props;
   </head>
   <body>
     <main class="bg-white dark:bg-zinc-900 h-screen">
-      <div class="container px-6 py-12 mx-auto">
-        <h1
-          class="text-2xl font-semibold text-zinc-800 lg:text-3xl dark:text-zinc-100"
-        >
-          <a href="/"> Kieran Sweeden</a>
-        </h1>
-        <small class="dark:text-zinc-500">Full Stack Developer</small>
-
-        <div class="mt-8 xl:mt-16 lg:flex lg:-mx-12">
-          <Navigation currentPage={title.toLowerCase()} />
-          <slot />
-        </div>
+      <div class="container max-w-3xl mx-auto min-h-screen">
+        <Navigation currentPage={title.toLowerCase()} />
+        <hr />
       </div>
     </main>
   </body>
