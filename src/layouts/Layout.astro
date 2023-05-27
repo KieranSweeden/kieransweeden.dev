@@ -1,7 +1,8 @@
 ---
 import "@fontsource/atkinson-hyperlegible";
-import Footer from "../components/Footer.astro";
 import Navigation from "../components/Navigation.astro";
+import Divider from "../components/Divider.astro";
+import Footer from "../components/Footer.astro";
 
 export interface Props {
   title: string;
@@ -29,9 +30,9 @@ const navLinkList = [
     <main class="bg-white dark:bg-zinc-900 h-screen">
       <div class="container max-w-3xl mx-auto min-h-screen">
         <Navigation navLinks={navLinkList} />
-        <hr class="mb-5" />
+        <Divider />
         <slot />
-        <hr class="mb-5" />
+        <Divider />
         <Footer navLinks={navLinkList} />
       </div>
     </main>
