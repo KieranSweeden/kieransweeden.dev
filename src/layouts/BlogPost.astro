@@ -15,9 +15,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         <BaseHead title={title} description={description} />
     </head>
 
-    <body>
+    <body class="bg-zinc-900 text-zinc-300">
         <Header />
-        <main class="mx-auto max-w-prose">
+        <main class="mx-auto max-w-prose py-5 px-3">
             <article>
                 <div class="hero-image">
                     {

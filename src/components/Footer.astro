@@ -4,12 +4,16 @@ import SocialMediaIconLink from "./SocialMediaIconLink.astro";
 const today = new Date();
 ---
 
-<footer>
-    <hr />
-    <nav class="mx-auto max-w-prose flex justify-between p-3 items-center">
+<footer class="text-zinc-300">
+    <hr class="border-zinc-700" />
+    <nav
+        class="mx-auto max-w-prose flex justify-between py-5 px-3 items-center"
+    >
         <div>
-            <small>&copy; {today.getFullYear()} Kieran Sweeden.</small>
-            <small>All rights reserved.</small>
+            <small
+                >&copy; {today.getFullYear()} Kieran Sweeden. All rights
+                reserved.</small
+            >
         </div>
         <ul class="flex gap-3">
             <li>
