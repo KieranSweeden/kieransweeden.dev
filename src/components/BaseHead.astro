@@ -23,6 +23,13 @@ const { title, description, image = "/meta-hero.webp" } = Astro.props;
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+    href="https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,200;0,400;0,600;1,400;1,800&display=swap"
+    rel="stylesheet"
+/>
+
 <!-- Primary Meta Tags -->
 <title>{title}</title>
 <meta name="title" content={title} />
