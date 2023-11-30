@@ -1,0 +1,8 @@
+---
+const { href, description } = Astro.props;
+---
+
+<a href={href} title={description} target="_blank">
+    <span class="sr-only">{description}</span>
+    <slot />
+</a>
